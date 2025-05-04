@@ -42,9 +42,11 @@ export async function signup(req,res){
                 name: newUser.fullName,
                 image: newUser.profilePic || "",
             });
-
+                console.log(`Stream user created for ${newUser.fullName}`);
+                
         }catch(error){
-
+            console.log("Error creating Stream user:",error);
+            
         }
 
    
