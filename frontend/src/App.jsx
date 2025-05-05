@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+
 import { Route, Routes } from "react-router";
 import HomePage from './pages/HomePage';
 import SignUpPage from './pages/SignUpPage';
@@ -7,7 +8,11 @@ import NotificationsPage from "./pages/NotificationsPage.jsx";
 import CallPage from "./pages/CallPage.jsx";
 import ChatPage from "./pages/ChatPage.jsx";
 import OnboardingPage from "./pages/OnboardingPage.jsx";
+
+import axios from "axios"
+
 import toast, { Toaster } from "react-hot-toast"
+import { useQuery } from '@tanstack/react-query';
 
 const App = () => {
   // const [data,setData]= useState([]);
@@ -29,10 +34,19 @@ const App = () => {
 
   //   getData();
   // },[]);
-  //tanstack query
-  
-  
-  return (
+
+  //tanstack query crash course
+ const {data,isLoading,error} = useQuery({
+  queryKey:["todos"],
+
+  queryFn: async()=>{
+    const res= await axios.get("https://jsonplaceholder.typicode.com/todos");
+    
+    return res.data;
+  },
+ });
+
+   return (
     <div className='h-screen'>
       <Routes>
         <Route path="/" element={<HomePage />}/>
