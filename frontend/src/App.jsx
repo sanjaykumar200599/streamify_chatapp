@@ -13,6 +13,7 @@ import axios from "axios"
 
 import toast, { Toaster } from "react-hot-toast"
 import { useQuery } from '@tanstack/react-query';
+import { axiosInstance } from './lib/axios.js';
 
 const App = () => {
   // const [data,setData]= useState([]);
@@ -40,11 +41,13 @@ const App = () => {
   queryKey:["todos"],
 
   queryFn: async()=>{
-    const res= await axios.get("https://jsonplaceholder.typicode.com/todos");
+    const res= await axiosInstance.get("https://localhost:5001/api/auth/me");
     
     return res.data;
   },
  });
+ console.log(data);
+ 
 
    return (
     <div className='h-screen'>
