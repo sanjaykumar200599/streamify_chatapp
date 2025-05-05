@@ -37,14 +37,14 @@ const App = () => {
   // },[]);
 
   //tanstack query crash course
- const {data,isLoading,error} = useQuery({
+ const { data,isLoading,error} = useQuery({
   queryKey:["todos"],
-
-  queryFn: async()=>{
-    const res= await axiosInstance.get("https://localhost:5001/api/auth/me");
+   queryFn: async()=>{
+    const res= await axiosInstance.get("/auth/me");
     
     return res.data;
   },
+  retry:false, // uath check
  });
  console.log(data);
  
