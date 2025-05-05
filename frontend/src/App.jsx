@@ -10,26 +10,27 @@ import OnboardingPage from "./pages/OnboardingPage.jsx";
 import toast, { Toaster } from "react-hot-toast"
 
 const App = () => {
-  const [data,setData]= useState([]);
-  const [isLoading, setLoading] = useState(false);
-  const [error,setError]= useState(null);
+  // const [data,setData]= useState([]);
+  // const [isLoading, setLoading] = useState(false);
+  // const [error,setError]= useState(null);
 
-  useEffect(()=>{
-    const getData = async()=>{
-      try{
-        const data= await fetch('https://jsonplaceholder.typicode.com/todos/1')
-        const json = await data.json()
-        setData(json)
-      }catch(error){
-        setError(error)
-      }finally{
-          setLoading(false);
-      }
-    };
+  // useEffect(()=>{
+  //   const getData = async()=>{
+  //     try{
+  //       const data= await fetch('https://jsonplaceholder.typicode.com/todos/1')
+  //       const json = await data.json()
+  //       setData(json)
+  //     }catch(error){
+  //       setError(error)
+  //     }finally{
+  //         setLoading(false);
+  //     }
+  //   };
 
-    getData();
-  },[]);
-  console.log(data);
+  //   getData();
+  // },[]);
+  //tanstack query
+  
   
   return (
     <div className='h-screen'>
