@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Route, Routes } from "react-router";
 import HomePage from './pages/HomePage';
 import SignUpPage from './pages/SignUpPage';
@@ -25,8 +25,12 @@ const App = () => {
       }finally{
           setLoading(false);
       }
-    }
-  })
+    };
+
+    getData();
+  },[]);
+  console.log(data);
+  
   return (
     <div className='h-screen'>
       <Routes>
