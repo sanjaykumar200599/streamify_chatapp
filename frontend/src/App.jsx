@@ -44,7 +44,7 @@ const App = () => {
     
     return res.data;
   },
-  retry:false, // uath check
+  retry:false, // auth check
  });
  console.log(data);
  
