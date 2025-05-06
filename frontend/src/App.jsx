@@ -47,7 +47,7 @@ const App = () => {
   retry:false, // auth check
  });
 
-  const authUser= authData?.user
+  const authUser= authData?.user;
 
    return (
     <div className='h-screen'>
