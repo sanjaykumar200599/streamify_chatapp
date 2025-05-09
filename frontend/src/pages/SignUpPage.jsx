@@ -68,7 +68,7 @@ const SignUpPage = () => {
                 </div>
 
                 <div className="space-y-3">
-                  {/* FULLNAME */}
+                  {/* FULLNAME  */}
                   <div className="form-control w-full">
                     <label className="label">
                       <span className="label-text">Full Name</span>
@@ -82,7 +82,7 @@ const SignUpPage = () => {
                       required
                     />
                   </div>
-                  {/* EMAIL */}
+                  {/* email address */}
                   <div className="form-control w-full">
                     <label className="label">
                       <span className="label-text">Email</span>
