@@ -12,7 +12,7 @@ router.post("/logout",logout);
 
 router.post("/onboarding", protectRoute, onboard);
 
-//check if the user is logged in
+// It is used to check if the user is logged in not
 router.get("/me", protectRoute ,(req,res)=>{
     res.status(200).json({success: true,user : req.user });
 })
