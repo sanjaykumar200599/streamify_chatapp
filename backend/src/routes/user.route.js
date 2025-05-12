@@ -4,7 +4,7 @@ import { acceptFriendRequest, getFriendRequests, getMyFriends, getOutgoingFriend
 
 const router = express.Router();
 
-// apply auth middleware to all routes
+// apply
 router.use(protectRoute);
 
 router.get("/", getRecommendedUsers);
