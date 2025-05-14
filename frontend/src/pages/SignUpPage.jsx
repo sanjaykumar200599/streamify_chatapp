@@ -53,7 +53,8 @@ const SignUpPage = () => {
           {/* ERROR MESSAGE IF ANY */}
           {error && (
             <div className="alert alert-error mb-4">
-              <span>{error.response.data.message}</span>
+             <span>{error?.response?.data?.message || "Something went wrong!"}</span>
+
             </div>
           )}
 
@@ -155,7 +156,7 @@ const SignUpPage = () => {
           <div className="max-w-md p-8">
             {/* Illustration*/}
             <div className="relative aspect-square max-w-sm mx-auto">
-              <img src="/i.png" alt="Language connection illustration" className="w-full h-full" />
+              <img src="/video_call.png" alt="Language connection illustration" className="w-full h-full" />
             </div>
 
             <div className="text-center space-y-3 mt-6">
